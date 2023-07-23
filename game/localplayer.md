@@ -1,6 +1,103 @@
 # локал. игрок
 # локал. игрок: методы (статические)
 **Примечание:** здесь практически не будет примеров, т.к. почти везде возвращаемые значения разные
+
+## `LocalPlayer.getUniqueID();`
+**Описание:** определяет UID/ID локал. игрока
+<details>
+<summary>Доп. информация</summary>
+
+**Возвращает:** `Integer uid`
+</details>
+
+## `LocalPlayer.getPointedPlayer();` / `LocalPlayer.getPointedVector();`
+**Описание:** определяет айди игрока/блок, на который смотрит игрок
+<details>
+<summary>Доп. информация</summary>
+
+**Возвращает:** `Integer uid` / `Double[] pointedVector`
+</details>
+
+## `LocalPlayer.attack(Integer id);` / `LocalPlayer.attackTp(Integer id);`
+**Описание:** атакует/телепортируется и атакует игрока
+<details>
+<summary>Доп. информация</summary>
+
+**Аргументы:**
+| Аргумент | Значение |
+| -------- | -------- |
+| Integer id | Айди цели |
+</details>
+
+## `LocalPlayer.click(Boolean rightClick);` / `LocalPlayer.longClick();`
+**Описание:** эмулирует нажатие/зажатие для взаимодействия с чем-либо
+<details>
+<summary>Доп. информация</summary>
+
+**Аргументы:**
+| Аргумент | Значение |
+| -------- | -------- |
+| Boolean rightClick | Какой кнопкой совершить клик (ПКМ = true) |
+</details>
+
+## `LocalPlayer.buildBlock(Integer posX, Integer posY, Integer posZ, Integer side);`
+**Описание:** симулирует установку блока нажатием на блок с определённой стороны
+<details>
+<summary>Доп. информация</summary>
+
+**Аргументы:**
+| Аргумент | Значение |
+| -------- | -------- |
+| Integer posX | Позиция блока-опоры по X |
+| Integer posY | Позиция блока-опоры по Y |
+| Integer posZ | Позиция блока-опоры по Z |
+| Integer side | Сторона для клика по блоку-опоре |
+
+**Примечание:** эта функция не устанавливает блок на координатах `posX`, `posY` и `posZ`, а кликает НА блок с координатами `posX`, `posY` и `posZ` со стороны `side`, т.е., чтобы поставить блок на другой блок, нужно использовать LocalPlayer.buildBlock(posX, posY-1 /* -1 от позиции нового блока, чтобы поставить НА блоке */, posZ, BlockSide.UP /* кликаем на блок сверху*/);
+**Примечание 2:** для удобного использования см. [Константные классы (constants.md)](other/constants.md)
+</details>
+
+## `LocalPlayer.destroyBlock(Integer posX, Integer posY, Integer posZ);`
+**Описание:** ломает блок (в том числе и неразрушимые блоки)
+<details>
+<summary>Доп. информация</summary>
+
+**Аргументы:**
+| Аргумент | Значение |
+| -------- | -------- |
+| Integer posX | Позиция блока по X |
+| Integer posY | Позиция блока по Y |
+| Integer posZ | Позиция блока по Z |
+
+</details>
+
+## `LocalPlayer.openContainer(Integer posX, Integer posY, Integer posZ);`
+**Описание:** открывает хранилище (сундук, печь...)
+<details>
+<summary>Доп. информация</summary>
+
+**Аргументы:**
+| Аргумент | Значение |
+| -------- | -------- |
+| Integer posX | Позиция блока по X |
+| Integer posY | Позиция блока по Y |
+| Integer posZ | Позиция блока по Z |
+
+**Примечание:** метод нестабилен, может вызывать краши без причины (признак дурачины)
+</details>
+
+## `LocalPlayer.openInventory();`
+**Описание:** открывает инвентарь локал. игрока
+
+## `LocalPlayer.closeScreen();`
+**Описание:** закрывает верхний интерфейс (важно: см. примечание)
+<details>
+<summary>Доп. информация</summary>
+
+**Примечание:** метод опасен, может вызывать закрытие рендера игры, если руки из жопы
+</details>
+
+
 ## `LocalPlayer.getNameTag();`
 **Описание:** определяет нэймтег (см. примечание) локал. игрока
 <details>
