@@ -45,8 +45,8 @@
 **Примечание:** имя, которое видит игрок (может быть отредактировано сервером (к примеру, для отображения доната))
 </details>
 
-## `Player.getYaw(Integer id);`
-**Описание:** определяет угол поворота головы игрока по горизонтали
+## `LocalPlayer.getYaw(Integer id);` / `LocalPlayer.getPitch(Integer id);`
+**Описание:** определяет угол поворота головы игрока по горизонтали / вертикали
 <details>
 <summary>Доп. информация</summary>
 
@@ -55,11 +55,11 @@
 | -------- | -------- |
 | Integer id | UID игрока |
 
-**Возвращает:** `Double yaw`
+**Возвращает:** `Double yaw` / 'Double pitch'
 </details>
 
-## `Player.getPitch(Integer id);`
-**Описание:** определяет угол поворота головы игрока по вертикали
+## `LocalPlayer.getPositionX(Integer id);` / `LocalPlayer.getPositionY(Integer id);` / `LocalPlayer.getPositionZ(Integer id);`
+**Описание:** определяет координату игрока по оси X/Y/Z
 <details>
 <summary>Доп. информация</summary>
 
@@ -68,11 +68,11 @@
 | -------- | -------- |
 | Integer id | UID игрока |
 
-**Возвращает:** `Double pitch`
+**Возвращает:** `Double posX` / `Double posY` / `Double posZ`
 </details>
 
-## `Player.getPositionX(Integer id);`
-**Описание:** определяет координату игрока по оси X
+## `LocalPlayer.getVelocityX(Integer id);` / `LocalPlayer.getVelocityY(Integer id);` / `LocalPlayer.getVelocityZ(Integer id);`
+**Описание:** определяет скорость игрока по оси X/Y/Z
 <details>
 <summary>Доп. информация</summary>
 
@@ -81,73 +81,7 @@
 | -------- | -------- |
 | Integer id | UID игрока |
 
-**Возвращает:** `Double posX`
-</details>
-
-## `Player.getPositionY(Integer id);`
-**Описание:** определяет координату игрока по оси Y
-<details>
-<summary>Доп. информация</summary>
-
-**Аргументы:**
-| Аргумент | Значение |
-| -------- | -------- |
-| Integer id | UID игрока |
-
-**Возвращает:** `Double posY`
-**Примечание:** значения могут быть очень странными, например, если игрок висит в полёте, его скорость >1000000, а если стоит на земле, ~-0.07
-</details>
-
-## `Player.getPositionZ(Integer id);`
-**Описание:** определяет координату игрока по оси Z
-<details>
-<summary>Доп. информация</summary>
-
-**Аргументы:**
-| Аргумент | Значение |
-| -------- | -------- |
-| Integer id | UID игрока |
-
-**Возвращает:** `Double posZ`
-</details>
-
-## `Player.getVelocityX(Integer id);`
-**Описание:** определяет скорость игрока по оси X
-<details>
-<summary>Доп. информация</summary>
-
-**Аргументы:**
-| Аргумент | Значение |
-| -------- | -------- |
-| Integer id | UID игрока |
-
-**Возвращает:** `Double velX`
-</details>
-
-## `Player.getVelocityY(Integer id);`
-**Описание:** определяет скорость игрока по оси Y
-<details>
-<summary>Доп. информация</summary>
-
-**Аргументы:**
-| Аргумент | Значение |
-| -------- | -------- |
-| Integer id | UID игрока |
-
-**Возвращает:** `Double velY`
-</details>
-
-## `Player.getVelocityZ(Integer id);`
-**Описание:** определяет скорость игрока по оси Z
-<details>
-<summary>Доп. информация</summary>
-
-**Аргументы:**
-| Аргумент | Значение |
-| -------- | -------- |
-| Integer id | UID игрока |
-
-**Возвращает:** `Double velZ`
+**Возвращает:** `Double velX` / `Double velY` / `Double velZ`
 </details>
 
 ## `Player.getCollisionSize(Integer id);`
